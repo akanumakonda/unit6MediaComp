@@ -112,11 +112,40 @@ public class Picture extends SimplePicture
       for (int col = 0; col < width / 2; col++)
       {
         leftPixel = pixels[row][col];
-        rightPixel = pixels[row][width - 1 - col];
+        rightPixel = pixels[row][pixels[row].length - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
-  }
+  }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *  that describes the operation of the method
+     *
+     * @pre     preconditions for the method
+     *          (what the method assumes about the method's parameters and class's state)
+     * @post    postconditions for the method
+     *          (what the method guarantees upon completion)
+     * @param   y   description of parameter y
+     * @return  description of the return value
+     */
+    public void mirrorVerticalRightToLeft()
+    {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel leftPixel = null;
+      Pixel rightPixel = null;
+      int width = pixels[0].length;
+      for (int row = 0; row < pixels.length; row++)
+      {
+          for (int col = 0; col < width / 2; col++)
+          {
+              rightPixel = pixels[pixels.length-1][pixels[row].length-1];
+              leftPixel = pixels[pixels.length-1-row][pixels[row].length - 1 - col];
+              rightPixel.setColor(leftPixel.getColor());
+            }
+        } 
+    }
+
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()

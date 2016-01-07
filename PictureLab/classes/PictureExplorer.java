@@ -102,7 +102,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   public PictureExplorer(DigitalPicture picture)
   {
     // set the fields
-    this.picture=picture;
+    this.picture = picture;
     zoomFactor=1;
     
     // create the window and set things up
@@ -800,7 +800,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("beach.jpg");
+    Picture pix = new Picture("elephant.jpg");
     pix.explore();
   }
   
