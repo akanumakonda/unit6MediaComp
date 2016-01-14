@@ -76,6 +76,15 @@ public class PictureTester
   
   
   /** Method to test mirrorTemple */
+  public static void testCropAndCopy()
+  {
+      Picture koala = new Picture("koala.jpg");
+      Picture flower = new Picture("whiteFlower.jpg");
+      koala.explore();
+      flower.explore();
+      koala.cropAndCopy(flower, 101, 263, 280, 442 , 319, 322);
+      koala.explore();
+    }
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
@@ -121,6 +130,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+    testCropAndCopy();
     testZeroBlue();
     testKeepOnlyBlue();
     //testKeepOnlyRed();

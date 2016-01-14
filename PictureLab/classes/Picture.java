@@ -260,6 +260,35 @@ public class Picture extends SimplePicture
 
   
   /** Mirror just part of a picture of a temple */
+  public void cropAndCopy( Picture sourcePicture, int startSourceRow, int endSourceRow, int startSourceCol, int endSourceCol,
+         int startDestRow, int startDestCol )
+  {
+      //flower row 101 start column 280
+      //flower row 263  end column 442
+      //koala bounds row 481  column 484
+      // row 319 column 322
+      Pixel source = null;
+      Pixel after = null;
+      Pixel[][] koala = this.getPixels2D();
+      Pixel[][] flower = sourcePicture.getPixels2D();
+      
+      for (int row = startSourceRow; row<= endSourceRow; row++)
+      {
+          for (int col = startSourceCol; col <= endSourceCol; col++)
+          {
+              source = flower[row][col];
+              after = koala[row- startSourceRow + startDestRow][col - startSourceCol + startDestCol];
+              after.setColor(source.getColor());
+              flower[row][col] = null;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
   public void mirrorArms()
   {
     int mirrorPoint = 190;
