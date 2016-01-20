@@ -29,20 +29,20 @@ public class CollageLab extends SimplePicture
         Picture hedgehog2 = new Picture("hedgehog2.jpg");
         Picture otter = new Picture("otter.jpg");
         hedgehog.mirrorVerticalRightToLeft();
-        
-        hedgehog.negate();
+        hedgehog2.cropAndCopy(otter, 0, 254, 0, 193 , 77, 0);
         hedgehog.grayscale();
+        hedgehog.negate();
         original.copy(hedgehog,0,0);
         hedgehog2.cropAndCopy(otter, 0, 254, 0, 193 , 77, 0);
         original.copy(hedgehog2,0, 497); 
-        hedgehog.setRed();
+        hedgehog2.setBlue();
         hedgehog2.negate();
         original.copy(hedgehog2,330, 0);
         otter.setRed();
         hedgehog3.cropAndCopy(otter, 0, 254, 0, 193 , 77, 0);
         hedgehog3.grayscale();
         original.copy(hedgehog3,330,497);
-        
+        hedgehog.explore();
         original.explore();
     }
 
