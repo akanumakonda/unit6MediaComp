@@ -28,6 +28,7 @@ public class CollageLab extends SimplePicture
         Picture hedgehog3 = new Picture("hedgehog2.jpg");
         Picture hedgehog2 = new Picture("hedgehog2.jpg");
         Picture otter = new Picture("otter.jpg");
+        hedgehog.explore();
         hedgehog.mirrorVerticalRightToLeft();
         hedgehog2.cropAndCopy(otter, 0, 254, 0, 193 , 77, 0);
         hedgehog.grayscale();
@@ -42,8 +43,8 @@ public class CollageLab extends SimplePicture
         hedgehog3.cropAndCopy(otter, 0, 254, 0, 193 , 77, 0);
         hedgehog3.grayscale();
         original.copy(hedgehog3,330,497);
-        hedgehog.explore();
         original.explore();
+        original.write("MyCollage.jpg");
     }
 
 }
