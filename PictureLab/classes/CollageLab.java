@@ -3,8 +3,8 @@
 /**
  * Write a description of class CollageLab here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Anusha Anumakonda) 
+ * @version (1/21/15)
  */
 public class CollageLab extends SimplePicture
 {
